@@ -1,0 +1,82 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "GUI", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "and for pvp"
+})
+
+Tab:AddButton({
+	Name = "Hitbox",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/GJXmG044"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Equip tools",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/gR4Zki4n"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Drop tools",
+	Callback = function()
+      		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
+   if v:IsA("Tool")  then
+    wait(0.1)
+    v.Parent = game.Players.LocalPlayer.Character
+    wait(0.1)
+    v.Parent = game.Workspace
+end
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Multi gear",
+	Callback = function()
+      		lp = game:GetService("Players").LocalPlayer
+
+game:GetService("UserInputService").InputBegan:Connect(function(key)
+	if key.KeyCode == Enum.KeyCode.E then
+		for i,tool in pairs(lp.Backpack:GetChildren()) do
+			if tool:IsA("Tool") then
+				tool.Parent = lp.Character
+				tool:Activate()
+				task.wait()
+				tool.Parent = lp.Backpack
+			end
+		end
+	end
+end)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Keyboard",
+	Callback = function()
+      		loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Kill all",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/g0kC5mjs"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Reach sword",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/wyXt5xmu"))()
+  	end    
+})
