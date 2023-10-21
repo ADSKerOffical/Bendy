@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "GUI", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Bendy and ink machine", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Tab = Window:MakeTab({
 	Name = "Main",
@@ -9,7 +9,7 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "and for pvp"
+	Name = "And for pvp"
 })
 
 Tab:AddButton({
@@ -79,4 +79,105 @@ Tab:AddButton({
 	Callback = function()
       		loadstring(game:HttpGet("https://pastebin.com/raw/wyXt5xmu"))()
   	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Section"
+})
+
+Tab:AddTextbox({
+	Name = "Animation loader",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		local Anim = Instance.new("Animation")
+Anim.AnimationId = Value
+local k = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play()
+k:AdjustSpeed(1)
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Teleport CFrame",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Value)
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "SMS",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		local msg = Instance.new("Message",workspace)
+msg.Text = Value
+wait(5.8)
+msg:Destroy()
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Spin",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		local spinSpeed = Value
+local Spin = Instance.new("BodyAngularVelocity")
+Spin.Name = "Spinning"
+Spin.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+Spin.MaxTorque = Vector3.new(0, math.huge, 0)
+Spin.AngularVelocity = Vector3.new(0,spinSpeed,0)
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Time set",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Lighting.TimeOfDay = Value
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Parts",
+	Default = "input color",
+	TextDisappear = true,
+	Callback = function(Value)
+		for _, part in ipairs(workspace:GetDescendants()) do
+        if part:IsA("BasePart") then
+            local r = Value
+            local g = Value
+            local b = Value
+            part.BrickColor = BrickColor.new(Color3.new(r, g, b))
+        end
+    end
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Copy text",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		setclipboard(Value)
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "SMS v2",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = Value, Color = Color3.fromRGB( 255,0,0 ), Font = Enum.Font.Arial } )
+	end	  
 })
