@@ -20,6 +20,13 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Orbit player",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Equip tools",
 	Callback = function()
       		loadstring(game:HttpGet("https://pastebin.com/raw/gR4Zki4n"))()
@@ -81,6 +88,125 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Telekinesis",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Steal tools",
+	Callback = function()
+      		for i,v in pairs (game.Players:GetChildren()) do
+wait()
+for i,b in pairs (v.Backpack:GetChildren()) do
+b.Parent = game.Players.LocalPlayer.Backpack
+end
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Platform",
+	Callback = function()
+      		local NovoBloco = Instance.new("Part", workspace)
+local ts = game:GetService("TweenService")
+NovoBloco.Anchored = true
+NovoBloco.CanCollide = true
+NovoBloco.Size = Vector3.new(5.246, 0.271, 4.852)
+_G.e = true
+
+while _G.e == true do wait()
+ ts:Create(NovoBloco, TweenInfo.new(0.2), {CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -3.5, 0)}):Play()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Big platform",
+	Callback = function()
+      		local NovoBloco = Instance.new("Part", workspace)
+local ts = game:GetService("TweenService")
+NovoBloco.Anchored = true
+NovoBloco.CanCollide = true
+NovoBloco.Size = Vector3.new(50.246, 0.271, 50.852)
+_G.e = true
+
+while _G.e == true do wait()
+ ts:Create(NovoBloco, TweenInfo.new(0.2), {CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, -3.5, 0)}):Play()
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Telekinesis of God",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/TelekinesisGod/main/Telekinesis"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Server breaker",
+	Callback = function()
+      		game:GetService("CoreGui").PurchasePrompt.Enabled = false
+_G.Lag = true
+while _G.Lag do
+for i,v in pairs(workspace:GetDescendants()) do
+   if v:IsA("ClickDetector") then
+    fireclickdetector(v)
+   end
+end
+  wait(1)
+  end
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Section"
+})
+
+Tab:AddButton({
+	Name = "Spawn",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19.2736759185791, 47.2499885559082, -95.39224243164062)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Armory v1",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-28.092544555664062, 47.2499885559082, -58.13669967651367)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Armory v2",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.907795906066895, 47.2499885559082, -54.53683853149414)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Armory v3",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-28.757802963256836, 47.2499885559082, 23.287477493286133)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Armory v4",
+	Callback = function()
+      		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11.947197914123535, 47.2499885559082, 23.31879425048828)
+  	end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
@@ -88,7 +214,7 @@ local Tab = Window:MakeTab({
 })
 
 local Section = Tab:AddSection({
-	Name = "Section"
+	Name = "Visual"
 })
 
 Tab:AddTextbox({
@@ -180,4 +306,79 @@ Tab:AddTextbox({
 	Callback = function(Value)
 		game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = Value, Color = Color3.fromRGB( 255,0,0 ), Font = Enum.Font.Arial } )
 	end	  
+})
+
+local Section = Tab:AddSection({
+	Name = "Fly"
+})
+
+Tab:AddButton({
+	Name = "Fly",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/TCHpDrRr"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Fly v3",
+	Callback = function()
+      		loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "CFrame fly",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastebin.com/raw/YvKv4AuY'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Fly car",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Fling"
+})
+
+Tab:AddButton({
+	Name = "Dino with fling",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_K2n31uc6t2wY5A8786eR4K15sgbUF0vdQ80a0LzgvLRkSNYd89H1AS3124gMR6SM.lua.txt'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Click fling",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_5wpM7bBcOPspmX7lQ3m75SrYNWqxZ858ai3tJdEAId6jSI05IOUB224FQ0VSAswH.lua.txt'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Fe yeet",
+	Callback = function()
+      		loadstring(game:HttpGet('https://pastebin.com/raw/dg5QJga2'))()
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "ESP"
+})
+
+Tab:AddButton({
+	Name = "ESP",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/AFGfwLgQ"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "ESP v2",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/fatesc/fates-esp/main/main.lua'))()
+  	end    
 })
