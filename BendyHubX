@@ -236,7 +236,11 @@ Tab:AddButton({
 	Name = "Armory v2",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9.907795906066895, 47.2499885559082, -54.53683853149414)
-  	end "Armory v3",
+  	end 
+})
+
+Tab:AddButton({
+        Name = "Armory v3",
 	Callback = function()
       		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-28.757802963256836, 47.2499885559082, 23.287477493286133)
   	end    
