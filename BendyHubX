@@ -205,6 +205,26 @@ loadstring(play:HttpGet(("https://pastefy."..ga.."/"..rWFGCSGo.."/raw"),true))()
    end    
 })
 
+Tab:AddTextbox({
+	Name = "Reach v2",
+	Default = "input",
+	TextDisappear = true,
+	Callback = function(Value)
+for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren()) do
+		if v:isA("Tool") then
+			local a = Instance.new("SelectionBox",v.Handle)
+			v.Handle.Massless = true
+			v.Handle.Transparency = 1
+			a.Adornee = v.Handle
+			v.Handle.Size = Vector3.new(Value, Value, Value)
+			local selectionBox = Instance.new("SelectionBox",v.Handle)
+			selectionBox.Adornee = v.Handle
+			selectionBox.Color3 = Color3.new(0, 0.313725, 0.47451)
+		end
+	end
+	end	  
+})
+
 Tab:AddButton({
  Name = "Floating tools",
  Callback = function()
