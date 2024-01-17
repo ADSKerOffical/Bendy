@@ -29,7 +29,11 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Equip tools",
 	Callback = function()
-      		loadstring(game:HttpGet("https://pastebin.com/raw/gR4Zki4n"))()
+      		for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+     if tool:IsA("Tool") then
+          tool.Parent = game:GetService("Players").LocalPlayer.Character -- I didn't use Equip because the Equip function unequips any other tools in your character.
+     end
+ end
   	end    
 })
 
@@ -146,11 +150,12 @@ Tab:AddButton({
   	end    
 })
 
-Tab:AddButton({
-	Name = "Server breaker",
-	Callback = function()
-      		game:GetService("CoreGui").PurchasePrompt.Enabled = false
-_G.Lag = true
+Tab:AddToggle({
+ Name = "Server breaker",
+ Default = false,
+ Callback = function(Value)
+  game:GetService("CoreGui").PurchasePrompt.Enabled = false
+_G.Lag = Value
 while _G.Lag do
 for i,v in pairs(workspace:GetDescendants()) do
    if v:IsA("ClickDetector") then
@@ -159,7 +164,7 @@ for i,v in pairs(workspace:GetDescendants()) do
 end
   wait(1)
   end
-  	end    
+ end    
 })
 
 Tab:AddButton({
