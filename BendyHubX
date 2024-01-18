@@ -328,6 +328,65 @@ end
    end    
 })
 
+Tab:AddButton({
+ Name = "Anti tase (Which locks inventory)",
+ Callback = function()
+        while game:GetService("RunService").RenderStepped:wait() do
+local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Refresh",
+ Callback = function()
+        last_pick_sin_mrazy = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+wait()
+game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0 
+wait(3.5)
+game. Players.LocalPlayer.Character.HumanoidRootPart.CFrame = last_pick_sin_mrazy
+   end    
+})
+
+Tab:AddButton({
+ Name = "Obby godmode",
+ Callback = function()
+        local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/lolpoppyus/Roblox-Lua/master/Pop%20UI%20Lib", true))()
+
+local ui = library:Tab("Obby Godmode")
+
+ui:Toggle("Godmode", function(arg)
+ local player = game:GetService("Players").LocalPlayer
+while task.wait() do
+local parts = workspace:GetPartBoundsInRadius(player.Character:WaitForChild("HumanoidRootPart").Position, 10)
+for _, part in ipairs(parts) do
+part.CanTouch = arg
+end
+end
+end)
+
+wait(0.001)
+
+OrionLib:MakeNotification({
+ Name = "BendyHubX",
+ Content = "Bypass cross forcefield, subspace tripmine, glove midas, frozen gun, bone trap, banana peel and so on",
+ Image = "rbxassetid://4483345998",
+ Time = 10
+})
+
+wait(0.001)
+
+OrionLib:MakeNotification({
+ Name = "BendyHubX ",
+ Content = "It works the other way around: If you turn it off, it will turn on and vice versa",
+ Image = "rbxassetid://4483345998",
+ Time = 10
+})
+
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Teleport",
 	Icon = "rbxassetid://4483345998",
